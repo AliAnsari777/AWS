@@ -30,7 +30,7 @@ node{
    withSonarQubeEnv('sonar-server')
     { 
       // You can override the credential to be used
-      sh "${mvnHome}/bin/mvn sonar:sonar
+      sh "${mvnHome}/bin/mvn sonar:sonar"
      // -Dsonar.host.url=http://localhost:9000 \
       //-Dsonar.login=8e9139bd9a85178509915265cd7604b406f87635"
     }
