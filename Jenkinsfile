@@ -25,10 +25,10 @@ node{
   
   // Sonar stage to upload code in sonar for checking its quality
   stage('SonarQube analysis') {
-    withSonarQubeEnv(credentialsId: '8e9139bd9a85178509915265cd7604b406f87635', installationName: 'My SonarQube Server')
+    def mvnHome = tool name: 'maven-3.6.3', type: 'maven'
+    withSonarQubeEnv(credentialsId: '8e9139bd9a85178509915265cd7604b406f87635', 'sonar9')
     { 
       // You can override the credential to be used
-      def mvnHome = tool name: 'maven-3.6.3', type: 'maven'
       sh "${mvnHome}/bin/mvn sonar:sonar"
     }
   }
