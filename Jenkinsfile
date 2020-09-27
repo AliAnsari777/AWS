@@ -9,7 +9,7 @@ node{
     sh "${mvnHome}/bin/mvn package"
   }
   
-  stage('Email'){
+/*  stage('Email'){
       mail bcc: '', 
       body: 'This is a demo email', 
       cc: '', 
@@ -17,5 +17,5 @@ node{
       replyTo: '', 
       subject: 'Jenkins', 
       to: 'alidk2013@gmail.com'
-  }
+  } */
 }
