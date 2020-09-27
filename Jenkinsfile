@@ -26,7 +26,7 @@ node{
   // Sonar stage to upload code in sonar for checking its quality
   stage('SonarQube analysis') {
     def mvnHome = tool name: 'maven-3.6.3', type: 'maven'
-    withSonarQubeEnv(credentialsId: '8e9139bd9a85178509915265cd7604b406f87635', installationName: 'sonar9') 
+    withSonarQubeEnv('sonar9') 
     { 
       // You can override the credential to be used
       sh "${mvnHome}/bin/mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar"
